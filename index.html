@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Busca de Músicas</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    #aviso {
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Buscar Músicas</h1>
+    <input type="text" id="busca" placeholder="Digite o nome da música ou artista">
+    <button type="button" id="btnBuscar">Buscar</button>
+    <button type="button" id="btnSalvar">Salvar</button>
+    <div id="aviso"></div>
+    <h2>Resultados:</h2>
+    <ul id="resultados"></ul>
+    <button id="carregarMais" style="display:none;">Carregar mais</button>
+  </form>
+
+  <script src="utils.js"></script>
+  <script src="api.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
