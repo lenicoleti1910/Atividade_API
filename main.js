@@ -7,14 +7,14 @@ const btnCarregarMais = document.getElementById('carregarMais'); // Botão "Carr
 
 // Variáveis de controle
 let resultadosCache = [];              // Guarda os resultados já buscados (cache)
-let paginaAtual = 0;                   // Página atual dos resultados (para paginação)
-const RESULTADOS_POR_PAGINA = 5;       // Número de resultados mostrados por vez
+let paginaAtual = 0;                   // Página atual dos resultados 
+const RESULTADOS_POR_PAGINA = 5;       // Resultados mostrados por vez
 let ultimoTermo = '';                  // Armazena o último termo buscado para evitar buscas repetidas
 
 async function buscarMusica() {// Função principal de busca
   const termo = input.value.trim(); // Remove espaços desnecessários
 
-  // Validação mínima: exige pelo menos 3 caracteres
+  // Validação mínima - pelo menos 3 caracteres
   if (termo.length < 3) {
     aviso.innerText = 'Digite pelo menos 3 caracteres.';
     lista.innerHTML = ''; //limpa o conteúdo
@@ -54,7 +54,7 @@ async function buscarMusica() {// Função principal de busca
       return;
     }
 
-    // Salva resultados no cache local e renderiza na tela
+    // Salva resultados no cache local 
     resultadosCache = resultados;
     salvarCache(cacheKey, resultados);
     aviso.innerText = 'Exibindo resultados da API...';
@@ -66,7 +66,7 @@ async function buscarMusica() {// Função principal de busca
   }
 }
 
-// Função para exibir os resultados paginados
+// Exibir os resultados paginados
 function renderResultados() {
   const inicio = paginaAtual * RESULTADOS_POR_PAGINA;
   const fim = inicio + RESULTADOS_POR_PAGINA;
